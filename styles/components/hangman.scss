@@ -1,0 +1,105 @@
+.hangman-container {
+  position: relative;
+  padding-left: 10rem;
+  padding-top: 8rem;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 15vw;
+}
+
+.pole {
+  position: absolute;
+  height: 80%;
+  top: 5rem;
+  left: 3rem;
+  border-left: 10px solid brown;
+  border-top: 10px solid brown;
+  width: 60%;
+  // z-index: -1;
+  &::after {
+    content: "";
+    height: 6rem;
+    width: 10px;
+    background: brown;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.hangman {
+  position: relative;
+  &__element {
+    opacity: 0.25;
+    &:nth-child(1) {
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%;
+      border: 10px solid black;
+    }
+    &:not(:first-child) {
+      height: 7rem;
+      width: 10px;
+      background: black;
+    }
+    &:nth-child(2) {
+      position: absolute;
+      height: 18.5rem;
+      left: 3.5rem;
+    }
+    &:nth-child(3) {
+      position: absolute;
+      transform: rotate(45deg);
+      top: 10rem;
+      left: 1.25rem;
+    }
+    &:nth-child(4) {
+      position: absolute;
+      transform: rotate(135deg);
+      top: 10rem;
+      left: 5.75rem;
+    }
+    &:nth-child(5) {
+      position: absolute;
+      transform: rotate(45deg);
+      top: 25rem;
+      left: 1.25rem;
+    }
+    &:nth-child(6) {
+      position: absolute;
+      transform: rotate(135deg);
+      top: 25rem;
+      left: 5.75rem;
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .hangman-#{$i} {
+    @for $j from 1 through $i {
+      .hangman__element:nth-child(#{$j}) {
+        opacity: 1;
+      }
+    }
+    @if ($i==6) {
+      .hangman__element:nth-child(1) {
+        &::after {
+          content: "● ●";
+          font-size: 3rem;
+          color: black;
+          position: absolute;
+          left: 25px;
+        }
+        &::before {
+          content: "(";
+          font-size: 3rem;
+          position: absolute;
+          font-family: sans-serif;
+          transform: rotate(90deg);
+          font-weight: bold;
+          top: 60px;
+          left: 55px;
+        }
+      }
+    }
+  }
+}
