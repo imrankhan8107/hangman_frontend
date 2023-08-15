@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export default function Start({ onStart }) {
   const [name, setname] = useState("");
-  const [gameId, setgameId] = useState("");
+  // const [gameId, setgameId] = useState("");
   return (
     <div>
       <input
@@ -14,7 +14,7 @@ export default function Start({ onStart }) {
         className="input-space"
       />
       <br />
-
+      
       <button onClick={() => onStart(name)} className={`start-button`}>
         Start
       </button>

@@ -22,7 +22,7 @@ async function playInSession(id, letter) {
   return response.json();
 }
 
-export default {
+module.exports = {
   createSession,
   playInSession,
 };
