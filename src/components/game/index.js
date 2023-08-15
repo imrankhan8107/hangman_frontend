@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "./layout";
-import playInSession from "../../api/sessions";
-import createSession from "../../api/sessions";
+import { playInSession } from "../../api/sessions";
+import { createSession } from "../../api/sessions";
 
 export default function Game() {
   const [session, setSession] = useState(null);

@@ -1,6 +1,6 @@
 const BASE_URL = "https://hangman-backend-t6nf.onrender.com/api/sessions";
 
-async function createSession(name) {
+export async function createSession(name) {
   const response = await fetch(BASE_URL, {
     method: "POST",
     headers: {
@@ -11,7 +11,7 @@ async function createSession(name) {
   return response.json();
 }
 
-async function playInSession(id, letter) {
+export async function playInSession(id, letter) {
   const response = await fetch(`${BASE_URL}/${id}/play`, {
     method: "POST",
     headers: {
@@ -22,7 +22,3 @@ async function playInSession(id, letter) {
   return response.json();
 }
 
-module.exports = {
-  createSession,
-  playInSession,
-};
