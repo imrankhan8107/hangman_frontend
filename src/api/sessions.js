@@ -1,6 +1,6 @@
-// const BASE_URL = "https://hangman-backend-t6nf.onrender.com/api/sessions";
-const BASE_URL =
-  "https://hangman-service-8202-abe81026f0be.herokuapp.com/api/sessions";
+const BASE_URL = "https://hangman-backend-t6nf.onrender.com/api/sessions";
+// const BASE_URL =
+//   "https://hangman-service-8202-abe81026f0be.herokuapp.com/api/sessions";
 
 // const BASE_URL = "http://localhost:8000/api/sessions";
 
