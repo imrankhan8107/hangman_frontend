@@ -1,5 +1,5 @@
-// const BASE_URL = "https://hangman-backend-t6nf.onrender.com/api/sessions";
-const BASE_URL = "http://localhost:8000/api/sessions";
+const BASE_URL = "https://hangman-backend-t6nf.onrender.com/api/sessions";
+// const BASE_URL = "http://localhost:8000/api/sessions";
 
 export async function createSession(name) {
   const response = await fetch(BASE_URL, {
