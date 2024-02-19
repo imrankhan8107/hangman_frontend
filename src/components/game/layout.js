@@ -7,7 +7,7 @@ import Letters from "./letters";
 export default function Layout({ session, guess, start }) {
   // const [result, setresult] = useState(false);
   const isRunning = !!session;
-  console.log(session);
+  // console.log(session);
   // setresult(session.result === true || !(session.livesLeft <= 0));
   return (
     <div className="game-wrapper">

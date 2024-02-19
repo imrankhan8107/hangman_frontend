@@ -14,7 +14,6 @@ export default function Start({ onStart }) {
         className="input-space"
       />
       <br />
-      
       <button onClick={() => onStart(name)} className={`start-button`}>
         Start
       </button>
