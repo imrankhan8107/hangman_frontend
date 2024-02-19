@@ -5,10 +5,13 @@ import Start from "./start";
 import Letters from "./letters";
 
 export default function Layout({ session, guess, start }) {
+  // const [result, setresult] = useState(false);
   const isRunning = !!session;
+  console.log(session);
+  // setresult(session.result === true || !(session.livesLeft <= 0));
   return (
     <div className="game-wrapper">
-      {isRunning && (
+      {isRunning && !session.result && session.livesLeft > 0 && (
         <>
           <div className="left-pane">
             <Lives livesLeft={session.livesLeft} />
@@ -19,6 +22,24 @@ export default function Layout({ session, guess, start }) {
           </div>
         </>
       )}
+      {isRunning &&
+        (session.livesLeft === 0 || !session.maskedWord.includes("_")) && (
+          <div className="result">
+            {session.result === true || !(session.livesLeft <= 0)
+              ? "You won!"
+              : "You lost!"}
+            <div>
+              <button
+                onClick={() => {
+                  window.location.reload();
+                }}
+                className={`start-button`}
+              >
+                Restart Game
+              </button>
+            </div>
+          </div>
+        )}
       {!isRunning && <Start onStart={start} isRunning={isRunning} />}
     </div>
   );

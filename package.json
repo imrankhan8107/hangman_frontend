@@ -4,6 +4,7 @@
   "description": "Awesome game ",
   "main": "app.js",
   "scripts": {
+    "start": "react-scripts start",
     "predeploy": "react-scripts build",
     "build": "webpack",
     "deploy": "gh-pages -b master -d build",
@@ -32,6 +33,18 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
