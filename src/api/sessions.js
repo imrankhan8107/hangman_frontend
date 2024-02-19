@@ -1,9 +1,10 @@
 // const BASE_URL = "https://hangman-backend-t6nf.onrender.com/api/sessions";
-const BASE_URL = "dry-dusk-34417-e6fc64175f4e.herokuapp.com/api/sessions";
+const BASE_URL =
+  "https://hangman-service-8202-abe81026f0be.herokuapp.com/api/sessions";
 
 // const BASE_URL = "http://localhost:8000/api/sessions";
 
-https: export async function createSession(name) {
+export async function createSession(name) {
   const response = await fetch(BASE_URL, {
     method: "POST",
     headers: {
