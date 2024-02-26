@@ -4,12 +4,12 @@
   padding-top: 8rem;
   box-sizing: border-box;
   // height: calc(760px + 2rem);
-  height: 95%;
+  height: 100%;
 }
 
 .pole {
   position: absolute;
-  height: calc(100vh - 7rem);
+  height: 70%;
   top: 2rem;
   left: 3rem;
   border-left: 10px solid $pink-dark;
@@ -109,6 +109,138 @@
           top: 60px;
           left: 50px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hangman-container {
+    // padding-left: 0;
+    padding-top: 21.5rem;
+    height: 40rem;
+  }
+
+  .pole {
+    height: 45%;
+    top: 20rem;
+    left: 6.5rem;
+    width: 37.5%;
+    border-left: 5px solid $pink-dark;
+    border-top: 5px solid $pink-dark;
+
+    &::after {
+      height: 1.5rem;
+      width: 5px;
+      background: $pink-dark;
+    }
+  }
+
+  .hangman {
+    &__element {
+      &:nth-child(1) {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $pink-dark;
+      }
+
+      &:not(:first-child) {
+        height: 2.5rem;
+        width: 5px;
+      }
+
+      &:nth-child(2) {
+        height: 7.5rem;
+        left: 1.75rem;
+      }
+
+      &:nth-child(3) {
+        top: 5rem;
+        left: 0.9rem;
+      }
+
+      &:nth-child(4) {
+        top: 5rem;
+        left: 2.6rem;
+      }
+
+      &:nth-child(5) {
+        top: 10.6rem;
+        left: 0.9rem;
+      }
+
+      &:nth-child(6) {
+        top: 10.6rem;
+        left: 2.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hangman-container {
+    padding-left: 5rem;
+    padding-top: 4rem;
+  }
+
+  .pole {
+    height: 50%;
+    top: 2.5rem;
+    left: 1.5rem;
+    width: 57.5%;
+    border-left: 10px solid $pink-dark;
+    border-top: 10px solid $pink-dark;
+
+    &::after {
+      height: 1.5rem;
+      width: 10px;
+      background: $pink-dark;
+      right: 0;
+    }
+  }
+
+  .hangman {
+    &__element {
+      &:nth-child(1) {
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        border: 10px solid $pink-dark;
+      }
+
+      &:not(:first-child) {
+        height: 3.5rem;
+        width: 5px;
+        background: $pink-dark;
+      }
+
+      &:nth-child(2) {
+        height: 9rem;
+        left: 2.25rem;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(45deg);
+        top: 5rem;
+        left: 1rem;
+      }
+
+      &:nth-child(4) {
+        transform: rotate(135deg);
+        top: 5rem;
+        left: 3.5rem;
+      }
+
+      &:nth-child(5) {
+        transform: rotate(45deg);
+        top: 13rem;
+        left: 1rem;
+      }
+
+      &:nth-child(6) {
+        transform: rotate(135deg);
+        top: 13rem;
+        left: 3.5rem;
       }
     }
   }
